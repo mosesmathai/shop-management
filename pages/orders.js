@@ -25,12 +25,13 @@ export default function Orders() {
         <div className="flex justify-center">
           <h1 className="text-2xl m-0">Orders Received</h1>
         </div>
-        <h1 className="text-lg text-gray-400 m-0">P.M.O.C: Prefered Mode of Communication</h1>   
+        <h1 className="text-lg text-gray-400 m-0">M.O.P: Mode of Payment</h1>   
         <table className="basic text-sm">
           <thead>
             <tr>
               <th>Date & Time</th>        
-              <th>Items Ordered</th>      
+              <th>Items Ordered</th> 
+              <th>M.O.P</th>     
             </tr>
           </thead>
           <tbody>
@@ -54,6 +55,7 @@ export default function Orders() {
                     </>
                   ))}
                 </td>
+                <td>{order.paymentMode}</td>
               </tr>
             ))}
           </tbody>
@@ -66,7 +68,7 @@ export default function Orders() {
         <div className="flex justify-center">
           <h1 className="text-2xl m-0">Orders Received</h1>
         </div>
-        <h1 className="text-sm text-gray-400 m-0">P.M.O.C: Prefered Mode of Communication</h1>   
+        <h1 className="text-sm text-gray-400 m-0">M.O.P&#58; Mode of Payment</h1>      
         <div>
           <div>
             {isLoading && (
@@ -85,7 +87,7 @@ export default function Orders() {
                 </div>
                 <div>
                   <div>
-                    <b>items</b>
+                    <b>Items&#58;</b>
                   </div>
                   <div>
                     {order.line_items.map(l => (
@@ -94,6 +96,9 @@ export default function Orders() {
                         &nbsp;&#40;x<b>{l.quantity}</b>&#41; <br />
                       </>
                     ))}
+                  </div>
+                  <div>
+                    <div><b>M.O.P&#58;</b>{order.paymentMode}</div>
                   </div>
                 </div>             
               </div>
