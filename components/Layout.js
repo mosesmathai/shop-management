@@ -37,7 +37,7 @@ export default function Layout({children}) {
         <div className="flex flex-col">
           <Nav show={showNav} />  
         </div>
-        <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-md p-4">{children}</div>
+        <div className="bg-white flex-grow m-2 rounded-md p-4">{children}</div>
       </main>
     </div>
   )
