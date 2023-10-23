@@ -24,7 +24,7 @@ export default function HomeStats() {
         sum += lineSum
       });
     });
-    return new Intl.NumberFormat('en-US').format(sum);
+    return new Intl.NumberFormat('sv-SE').format(sum);
   }
 
   if (isLoading) {

@@ -10,7 +10,6 @@ export default function Orders() {
   const [isLoading, setIsLoading] = useState(false);
   const matches = useMediaQuery('(min-width:600px)');
 
-
   useEffect(() => {
     setIsLoading(true);
     axios.get('/api/orders').then(response => {
@@ -18,6 +17,7 @@ export default function Orders() {
       setIsLoading(false);
     });
   }, [])
+
 
   if (matches) {
     return (
@@ -52,6 +52,7 @@ export default function Orders() {
                     <>
                       &#8226;&nbsp;{l.price_data.product_data.name}
                       &nbsp;&#40;x<b>{l.quantity}</b>&#41; <br />
+
                     </>
                   ))}
                 </td>
@@ -94,6 +95,7 @@ export default function Orders() {
                       <>
                         &#8226;&nbsp;{l.price_data.product_data.name}
                         &nbsp;&#40;x<b>{l.quantity}</b>&#41; <br />
+                        
                       </>
                     ))}
                   </div>
@@ -108,6 +110,4 @@ export default function Orders() {
       </Layout>
     )
   }
-  
-
 }
