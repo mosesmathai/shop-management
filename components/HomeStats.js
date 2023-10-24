@@ -20,11 +20,11 @@ export default function HomeStats() {
     orders.forEach(order => {
       const {line_items} = order;
       line_items.forEach(li => {
-        const lineSum = li.quantity * li.price_data.unit_amount;
+        const lineSum = li.price_data.unit_amount;
         sum += lineSum
       });
     });
-    return sum;
+    return new Intl.NumberFormat('en-US').format(sum);
   }
 
   if (isLoading) {
