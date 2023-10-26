@@ -38,6 +38,10 @@ export default function HomeStats() {
   const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date().setHours(0,0,0,0), 24));
   const ordersWeek = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*7));
   const ordersMonth = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*30));
+  const ordersThreeMonths = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*90));
+  const ordersSixMonths = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*180));
+  const ordersOneYear = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*365));
+  
   return (
     <div>
       <div className="tile-title">
@@ -59,6 +63,21 @@ export default function HomeStats() {
           <div className="tile-number">{ordersMonth.length}</div>
           <div className="tile-desc">{ordersMonth.length} orders this month</div>
         </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 3 Months</h3>
+          <div className="tile-number">{ordersThreeMonths.length}</div>
+          <div className="tile-desc">{ordersThreeMonths.length} orders last 3 months</div>
+        </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 6 Months</h3>
+          <div className="tile-number">{ordersSixMonths.length}</div>
+          <div className="tile-desc">{ordersSixMonths.length} orders last 6 months</div>
+        </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 12 Months</h3>
+          <div className="tile-number">{ordersOneYear.length}</div>
+          <div className="tile-desc">{ordersOneYear.length} orders last 12 months</div>
+        </div>
       </div>
       <div className="tile-title">
         <div>Revenue</div>
@@ -78,6 +97,21 @@ export default function HomeStats() {
           <h3 className="tile-header">This Month</h3>
           <div className="tile-number">{ordersTotal(ordersMonth)} Ksh</div>
           <div className="tile-desc">{ordersMonth.length} orders this month</div>
+        </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 3 Months</h3>
+          <div className="tile-number">{ordersTotal(ordersThreeMonths)} Ksh</div>
+          <div className="tile-desc">{ordersThreeMonths.length} orders last 3 months</div>
+        </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 6 Months</h3>
+          <div className="tile-number">{ordersTotal(ordersThreeMonths)} Ksh</div>
+          <div className="tile-desc">{ordersThreeMonths.length} orders last 6 months</div>
+        </div>
+        <div className="tile">
+          <h3 className="tile-header">Last 12 Months</h3>
+          <div className="tile-number">{ordersTotal(ordersOneYear)} Ksh</div>
+          <div className="tile-desc">{ordersOneYear.length} orders last 12 months</div>
         </div>
       </div>
     </div>

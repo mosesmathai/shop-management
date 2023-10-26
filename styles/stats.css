@@ -11,7 +11,7 @@
 }
 
 .tile-header {
-  @apply md:text-lg text-xs uppercase font-serif
+  @apply md:text-lg text-xs uppercase font-sans
 }
 
 .tile-desc {
