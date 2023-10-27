@@ -35,7 +35,7 @@ export default function HomeStats() {
     );
   }
 
-  const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date().setHours(0,0,0,0), 24));
+  const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date, new Date().setHours(0,0,0,0)));
   const ordersWeek = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*7));
   const ordersMonth = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*30));
   const ordersThreeMonths = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*90));
