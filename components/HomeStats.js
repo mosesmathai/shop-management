@@ -84,9 +84,9 @@ export default function HomeStats() {
       </div>
       <div className="grid md:grid-cols-3 grid-cols-2 md:gap-10 gap-3">
         <div className="tile">
-          <h3 className="tile-header">Today</h3>
+          <h3 className="tile-header">Last 24Hrs</h3>
           <div className="tile-number">{ordersTotal(ordersToday)} Ksh</div>
-          <div className="tile-desc">{ordersToday.length} orders today</div>
+          <div className="tile-desc">{ordersToday.length} orders last 24Hrs</div>
         </div>
         <div className="tile">
           <h3 className="tile-header">This Week</h3>
