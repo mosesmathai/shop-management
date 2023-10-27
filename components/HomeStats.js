@@ -35,7 +35,7 @@ export default function HomeStats() {
     );
   }
 
-  const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date, new Date().setHours(0,0,0,0)));
+  const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24));
   const ordersWeek = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*7));
   const ordersMonth = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*30));
   const ordersThreeMonths = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24*90));
@@ -49,9 +49,9 @@ export default function HomeStats() {
       </div>
       <div className="grid  md:grid-cols-3 grid-cols-2 md:gap-10 gap-3">
         <div className="tile">
-          <h3 className="tile-header">Today</h3>
+          <h3 className="tile-header">Last 24Hrs</h3>
           <div className="tile-number">{ordersToday.length}</div>
-          <div className="tile-desc">{ordersToday.length} orders today</div>
+          <div className="tile-desc">{ordersToday.length} orders last 24Hrs</div>
         </div>
         <div className="tile">
           <h3 className="tile-header">This Week</h3>
