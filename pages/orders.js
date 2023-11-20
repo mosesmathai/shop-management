@@ -31,6 +31,7 @@ export default function Orders() {
             <tr>
               <th>Date & Time</th>        
               <th>Items Ordered</th> 
+              <th>Total Bill</th>
               <th>M.O.P</th>     
             </tr>
           </thead>
@@ -56,6 +57,7 @@ export default function Orders() {
                     </>
                   ))}
                 </td>
+                <td>{order.amount}</td>
                 <td>{order.paymentMode}</td>
               </tr>
             ))}
@@ -98,6 +100,9 @@ export default function Orders() {
                         
                       </>
                     ))}
+                  </div>
+                  <div>
+                    <div><b>Total Bill&#58;</b>{order.amount}</div>
                   </div>
                   <div>
                     <div><b>M.O.P&#58;</b>{order.paymentMode}</div>
