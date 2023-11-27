@@ -54,12 +54,12 @@ export default function HomeStats() {
           <div className="tile-desc">{ordersToday.length} orders last 24Hrs</div>
         </div>
         <div className="tile">
-          <h3 className="tile-header">This Week</h3>
+          <h3 className="tile-header">Last 7 Days</h3>
           <div className="tile-number">{ordersWeek.length}</div>
           <div className="tile-desc">{ordersWeek.length} orders last 7 Days</div>
         </div>
         <div className="tile">
-          <h3 className="tile-header">This Month</h3>
+          <h3 className="tile-header">Last 30 Days</h3>
           <div className="tile-number">{ordersMonth.length}</div>
           <div className="tile-desc">{ordersMonth.length} orders last 30 Days</div>
         </div>
@@ -89,12 +89,12 @@ export default function HomeStats() {
           <div className="tile-desc">{ordersToday.length} orders last 24Hrs</div>
         </div>
         <div className="tile">
-          <h3 className="tile-header">This Week</h3>
+          <h3 className="tile-header">Last 7 Days</h3>
           <div className="tile-number">{ordersTotal(ordersWeek)} Ksh</div>
           <div className="tile-desc">{ordersWeek.length} orders last 7 Days</div>
         </div>
         <div className="tile">
-          <h3 className="tile-header">This Month</h3>
+          <h3 className="tile-header">Last 30 Days</h3>
           <div className="tile-number">{ordersTotal(ordersMonth)} Ksh</div>
           <div className="tile-desc">{ordersMonth.length} orders last 30 Days</div>
         </div>
